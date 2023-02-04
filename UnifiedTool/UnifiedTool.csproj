@@ -8,14 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="新文件夹\**" />
+    <EmbeddedResource Remove="新文件夹\**" />
+    <None Remove="新文件夹\**" />
+    <Page Remove="新文件夹\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
     <PackageReference Include="ShowMeTheXAML" Version="2.0.0" />
     <PackageReference Include="ShowMeTheXAML.AvalonEdit" Version="2.0.0" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="新文件夹\" />
   </ItemGroup>
 
 </Project>
