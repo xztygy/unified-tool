@@ -56,3 +56,4 @@ C:\Users\GONG\Desktop\unified-tool\UnifiedTool\obj\Debug\net6.0-windows\refint\U
 C:\Users\GONG\Desktop\unified-tool\UnifiedTool\obj\Debug\net6.0-windows\UnifiedTool.pdb
 C:\Users\GONG\Desktop\unified-tool\UnifiedTool\obj\Debug\net6.0-windows\UnifiedTool.genruntimeconfig.cache
 C:\Users\GONG\Desktop\unified-tool\UnifiedTool\obj\Debug\net6.0-windows\ref\UnifiedTool.dll
+C:\Users\GONG\Desktop\unified-tool\UnifiedTool\obj\Debug\net6.0-windows\UIControl\MenuDictionary.baml

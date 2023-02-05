@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\GONG\Desktop\unified-tool\UnifiedTool\App.xaml
-11407045341
+2998135273
 
 6-1683449617
 209771164640
-MainWindow.xaml;
+MainWindow.xaml;UIControl\MenuDictionary.xaml;
 
-False
+True
 

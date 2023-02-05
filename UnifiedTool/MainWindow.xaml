@@ -53,99 +53,114 @@
                                 Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </materialDesign:DrawerHost.LeftDrawerContent>
-                <Grid VerticalAlignment="Top" 
-                      x:Name="toolTitleBar"
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="61" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid VerticalAlignment="Top"
+                          x:Name="toolTitleBar"
                       MouseLeftButtonDown="toolTitleBar_MouseLeftButtonDown"
-                      >
-                    <materialDesign:ColorZone Padding="10"
+                          >
+                        <materialDesign:ColorZone Padding="10"
                                               BorderBrush="#FF7186DE"
                                               BorderThickness="0,0,0,1"
                                               Mode="Inverted"
                                              
                                               >
-                        <DockPanel>
-                            <StackPanel materialDesign:RippleAssist.IsCentered="True"
+                            <DockPanel>
+                                <StackPanel materialDesign:RippleAssist.IsCentered="True"
                                         Orientation="Horizontal">
-                                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}"
+                                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}"
                                               Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
                                               CommandParameter="{x:Static Dock.Left}"
                                               Content="{materialDesign:PackIcon Kind=ArrowLeft}" />
-                                <TextBlock Margin="16,0,0,0"
+                                    <TextBlock Margin="16,0,0,0"
                                            VerticalAlignment="Center"
                                            Text="Material Design In XAML Toolkit" />
-                                <materialDesign:ColorZone Margin="16,0,0,0"
+                                    <materialDesign:ColorZone Margin="16,0,0,0"
                                                           Padding="8,4,8,4"
                                                           Panel.ZIndex="1"
                                                           materialDesign:ElevationAssist.Elevation="Dp2"
                                                           CornerRadius="2"
                                                           Mode="Standard">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <Button Style="{StaticResource MaterialDesignToolButton}">
-                                            <materialDesign:PackIcon Kind="Search"
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button Style="{StaticResource MaterialDesignToolButton}">
+                                                <materialDesign:PackIcon Kind="Search"
                                                                      Opacity=".56" />
-                                        </Button>
-                                        <TextBox Grid.Column="1"
+                                            </Button>
+                                            <TextBox Grid.Column="1"
                                                  MinWidth="200"
                                                  Margin="8,0,0,0"
                                                  VerticalAlignment="Center"
                                                  materialDesign:HintAssist.Hint="Build a search bar"
                                                  materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                                  BorderThickness="0" />
-                                        <Button Grid.Column="2"
+                                            <Button Grid.Column="2"
                                                 Style="{StaticResource MaterialDesignToolButton}">
-                                            <materialDesign:PackIcon Margin="8,0,0,0"
+                                                <materialDesign:PackIcon Margin="8,0,0,0"
                                                                      Kind="Microphone"
                                                                      Opacity=".56" />
-                                        </Button>
-                                    </Grid>
-                                </materialDesign:ColorZone>
-                                <Button Margin="8,0,0,0"
+                                            </Button>
+                                        </Grid>
+                                    </materialDesign:ColorZone>
+                                    <Button Margin="8,0,0,0"
                                         Panel.ZIndex="0"
                                         Style="{StaticResource MaterialDesignToolForegroundButton}">
-                                    <materialDesign:PackIcon Kind="Send" />
-                                </Button>
-                            </StackPanel>
-                        </DockPanel>
-                    </materialDesign:ColorZone>
-                    <Grid HorizontalAlignment="Right">
-                        <materialDesign:ColorZone  Mode="Inverted">
-                            <DockPanel>
-                                <StackPanel materialDesign:RippleAssist.IsCentered="True"
-                                            Orientation="Horizontal"
-                                            >
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                        </Grid.ColumnDefinitions>
-                                        <Button x:Name="btnMin"
-                                                Style="{StaticResource MaterialDesignToolForegroundButton}"
-                                                VerticalAlignment="Top">
-                                            <materialDesign:PackIcon Kind="Minimize" />
-                                        </Button>
-                                        <Button x:Name="btnMax"
-                                                Style="{StaticResource MaterialDesignToolForegroundButton}"
-                                                VerticalAlignment="Top"
-                                                Grid.Column="1">
-                                            <materialDesign:PackIcon Kind="Maximize" />
-                                        </Button>
-                                        <Button x:Name="btnClose"
-                                                Style="{StaticResource MaterialDesignToolForegroundButton}"
-                                                VerticalAlignment="Top"
-                                                MouseMove="btnClose_MouseMove"
-                                                Grid.Column="2">
-                                            <materialDesign:PackIcon Kind="Close" />
-                                        </Button>
-                                    </Grid>
+                                        <materialDesign:PackIcon Kind="Send" />
+                                    </Button>
                                 </StackPanel>
                             </DockPanel>
                         </materialDesign:ColorZone>
+                        <Grid HorizontalAlignment="Right">
+                            <materialDesign:ColorZone  Mode="Inverted">
+                                <DockPanel>
+                                    <StackPanel materialDesign:RippleAssist.IsCentered="True"
+                                            Orientation="Horizontal"
+                                            >
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button x:Name="btnMin"
+                                                Style="{DynamicResource RightMenuFormStyle}"
+                                                VerticalAlignment="Top">
+                                                <materialDesign:PackIcon Kind="Minimize" />
+                                            </Button>
+                                            <Button x:Name="btnMax"
+                                                Style="{StaticResource RightMenuFormStyle}"
+                                                VerticalAlignment="Top"
+                                                
+                                                Grid.Column="1" Cursor="Hand">
+                                                <materialDesign:PackIcon Kind="Maximize" />
+                                            </Button>
+                                            <Button x:Name="btnClose"
+                                                Style="{StaticResource RightMenuFormStyle}"
+                                                VerticalAlignment="Top"
+                                                MouseMove="btnClose_MouseMove"
+                                                Grid.Column="2">
+                                                <materialDesign:PackIcon Kind="Close" />
+                                            </Button>
+                                        </Grid>
+                                    </StackPanel>
+                                </DockPanel>
+                            </materialDesign:ColorZone>
+                        </Grid>
+                    </Grid>
+                    <Grid VerticalAlignment="Top"
+                          Grid.Row="1"
+                          >
+                        <Button Style="{StaticResource RightMenuFormStyle}" >
+                            <materialDesign:PackIcon Kind="AccessTime"/>
+                        </Button>
+                        
                     </Grid>
                 </Grid>
             </materialDesign:DrawerHost>
