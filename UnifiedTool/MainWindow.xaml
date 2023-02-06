@@ -17,7 +17,8 @@
         Padding="0"
         BorderBrush="{x:Null}"
         WindowStyle="None"
-        ResizeMode="NoResize"
+        ResizeMode="CanResize"
+        SizeChanged="Window_SizeChanged"
         Topmost="True"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
@@ -131,20 +132,21 @@
                                             </Grid.ColumnDefinitions>
                                             <Button x:Name="btnMin"
                                                 Style="{DynamicResource RightMenuFormStyle}"
+                                                    Click="btnMin_Click"
                                                 VerticalAlignment="Top">
                                                 <materialDesign:PackIcon Kind="Minimize" />
                                             </Button>
                                             <Button x:Name="btnMax"
-                                                Style="{StaticResource RightMenuFormStyle}"
+                                                    Style="{DynamicResource RightMenuFormStyle}"
                                                 VerticalAlignment="Top"
-                                                
-                                                Grid.Column="1" Cursor="Hand">
+                                                    Click="btnMax_Click"
+                                                Grid.Column="1" >
                                                 <materialDesign:PackIcon Kind="Maximize" />
                                             </Button>
                                             <Button x:Name="btnClose"
-                                                Style="{StaticResource RightMenuFormStyle}"
+                                                    Style="{DynamicResource RightMenuFormStyle}"
                                                 VerticalAlignment="Top"
-                                                MouseMove="btnClose_MouseMove"
+                                                    Click="btnClose_Click"
                                                 Grid.Column="2">
                                                 <materialDesign:PackIcon Kind="Close" />
                                             </Button>
@@ -157,8 +159,8 @@
                     <Grid VerticalAlignment="Top"
                           Grid.Row="1"
                           >
-                        <Button Style="{StaticResource RightMenuFormStyle}" >
-                            <materialDesign:PackIcon Kind="AccessTime"/>
+                        <Button Style="{DynamicResource btnText}" >
+                            <materialDesign:PackIcon Kind="Like" />
                         </Button>
                         
                     </Grid>

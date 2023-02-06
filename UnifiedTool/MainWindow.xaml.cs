@@ -30,8 +30,15 @@ namespace UnifiedTool
         private void toolTitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point _pressedPosition = e.GetPosition(this);
+
             if (e.LeftButton == MouseButtonState.Pressed)
             {
+                System.Diagnostics.Debug.WriteLine("标题按下");
+                System.Diagnostics.Debug.WriteLine("X:" + _pressedPosition.X);
+                System.Diagnostics.Debug.WriteLine("Y:" + _pressedPosition.Y);
+                System.Diagnostics.Debug.WriteLine("宽:" + toolTitleBar.ActualWidth);
+                System.Diagnostics.Debug.WriteLine("高:" + toolTitleBar.ActualHeight);
+
                 if (_pressedPosition.X >= 0 && _pressedPosition.X < toolTitleBar.ActualWidth
                     && _pressedPosition.Y >= 0 && _pressedPosition.Y < toolTitleBar.ActualHeight
                     )
@@ -41,9 +48,43 @@ namespace UnifiedTool
             }
         }
 
-        private void btnClose_MouseMove(object sender, MouseEventArgs e)
-        {
+       
 
+        private void btnMin_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState= WindowState.Minimized;
+        }
+
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized) {
+                this.WindowState = WindowState.Normal;
+            }
+            else{
+                this.WindowState = WindowState.Maximized;
+            }
+            
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+           Environment.Exit(0);
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            switch (this.WindowState) {
+                case WindowState.Maximized:
+                    this.BorderThickness = new Thickness(8, 8, 8, 50);
+                    break;
+                case WindowState.Minimized:
+                    break;
+                case WindowState.Normal:
+                    if (this.BorderThickness.Top != 1) {
+                        this.BorderThickness = new Thickness(1);
+                    }
+                    break;
+            }
         }
     }
 }
