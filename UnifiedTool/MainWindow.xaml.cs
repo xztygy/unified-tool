@@ -33,6 +33,9 @@ namespace UnifiedTool
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
+                if (this.WindowState == WindowState.Maximized) { 
+                     this.WindowState = WindowState.Normal;
+                }
                 System.Diagnostics.Debug.WriteLine("标题按下");
                 System.Diagnostics.Debug.WriteLine("X:" + _pressedPosition.X);
                 System.Diagnostics.Debug.WriteLine("Y:" + _pressedPosition.Y);
@@ -75,7 +78,7 @@ namespace UnifiedTool
         {
             switch (this.WindowState) {
                 case WindowState.Maximized:
-                    this.BorderThickness = new Thickness(8, 8, 8, 50);
+                    this.BorderThickness = new Thickness(6, 6, 6, 46);
                     break;
                 case WindowState.Minimized:
                     break;
