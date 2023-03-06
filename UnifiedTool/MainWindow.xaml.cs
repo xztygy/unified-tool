@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UnifiedTool.FromWindows;
+using UnifiedTool.UIControl.DiyUserControl;
 
 namespace UnifiedTool
 {
@@ -33,8 +35,19 @@ namespace UnifiedTool
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                if (this.WindowState == WindowState.Maximized) { 
-                     this.WindowState = WindowState.Normal;
+                if (this.WindowState == WindowState.Maximized) {
+
+                    double mouse_window_y = System.Windows.Forms.Control.MousePosition.Y;
+                    double mouse_window_x = System.Windows.Forms.Control.MousePosition.X;
+
+                    double mouse_w = _pressedPosition.X / toolTitleBar.ActualWidth;
+
+                    this.WindowState = WindowState.Normal;
+                    double h_mouse_x =mouse_w * toolTitleBar.ActualWidth;
+                    
+                    this.Top = mouse_window_y - _pressedPosition.Y;
+                    this.Left = mouse_window_x - h_mouse_x;
+
                 }
                 System.Diagnostics.Debug.WriteLine("标题按下");
                 System.Diagnostics.Debug.WriteLine("X:" + _pressedPosition.X);
@@ -76,18 +89,26 @@ namespace UnifiedTool
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            switch (this.WindowState) {
+            switch (this.WindowState)
+            {
                 case WindowState.Maximized:
                     this.BorderThickness = new Thickness(6, 6, 6, 46);
                     break;
                 case WindowState.Minimized:
                     break;
                 case WindowState.Normal:
-                    if (this.BorderThickness.Top != 1) {
+                    if (this.BorderThickness.Top != 1)
+                    {
                         this.BorderThickness = new Thickness(1);
                     }
                     break;
             }
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+           LoginFrom login = new LoginFrom();
+           login.Show();
         }
     }
 }

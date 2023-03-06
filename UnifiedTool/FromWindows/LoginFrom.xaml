@@ -1,0 +1,39 @@
+﻿<Window x:Class="UnifiedTool.FromWindows.LoginFrom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UnifiedTool.FromWindows"
+        xmlns:UserControl="clr-namespace:UnifiedTool.UIControl.DiyUserControl"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Height="520"
+        Width="400"
+        Margin="0"
+        Padding="0"
+        BorderBrush="{x:Null}"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Topmost="True"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        
+        Title="LoginFrom" >
+    <Grid x:Name="login_body"
+          MouseLeftButtonDown="login_body_MouseLeftButtonDown">
+        
+        <UserControl:LoginAccount></UserControl:LoginAccount>
+        <Grid >
+            <ToggleButton materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Lock}"
+                          Content="{materialDesign:PackIcon Kind=KeyboardReturn}"
+                          Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                          HorizontalAlignment="Left"
+                          Foreground="White"
+                          Background="Transparent"
+                          BorderBrush="Transparent"
+                          VerticalAlignment="Bottom"
+                          x:Name="return_login"
+                          Click="return_login_Click"/>
+        </Grid>
+    </Grid>
+</Window>
