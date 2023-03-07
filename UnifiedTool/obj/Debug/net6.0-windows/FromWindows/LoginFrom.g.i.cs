@@ -74,7 +74,7 @@ namespace UnifiedTool.FromWindows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/UnifiedTool;component/fromwindows/loginfrom.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/UnifiedTool;V1.0.0.0;component/fromwindows/loginfrom.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\FromWindows\LoginFrom.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
