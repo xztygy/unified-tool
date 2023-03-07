@@ -30,6 +30,7 @@
             </Grid.RowDefinitions>
             <Grid VerticalAlignment="Top"
                   x:Name="toolTitleBar"
+                  MouseMove="toolTitleBar_MouseMove"
                   MouseLeftButtonDown="toolTitleBar_MouseLeftButtonDown">
                 <materialDesign:ColorZone Padding="10"
                                           BorderBrush="#FF7186DE"

@@ -7,21 +7,20 @@
         xmlns:UserControl="clr-namespace:UnifiedTool.UIControl.DiyUserControl"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Height="520"
-        Width="400"
+        Height="391"
+        Width="293"
         Margin="0"
         Padding="0"
         BorderBrush="{x:Null}"
         WindowStyle="None"
-        ResizeMode="CanResize"
+        ResizeMode="NoResize"
         Topmost="True"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        
+        Background="#1E1F22"
         Title="LoginFrom" >
     <Grid x:Name="login_body"
           MouseLeftButtonDown="login_body_MouseLeftButtonDown">
-        
         <UserControl:LoginAccount></UserControl:LoginAccount>
         <Grid >
             <ToggleButton materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Lock}"

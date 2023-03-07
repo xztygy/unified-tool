@@ -24,6 +24,7 @@ namespace UnifiedTool.UIControl.DiyUserControl
         public LoginAccount()
         {
             InitializeComponent();
+            
         }
 
     }

@@ -97,7 +97,7 @@
         <Setter Property="Width"
                 Value="200" />
         <Setter Property="Height"
-                Value="40" />
+                Value="37" />
         <Setter Property="Margin"
                 Value="0 20" />
         <Setter Property="Foreground"
@@ -120,7 +120,7 @@
                         <Trigger Property="IsMouseOver"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="#a2a9af"
+                                    Value="#4c5870"
                                     TargetName="inputBorderBackgroundEl" />
                             <Setter Property="Opacity"
                                     Value="0.7"
@@ -129,7 +129,7 @@
                         <Trigger Property="IsPressed"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="#a2a9af"
+                                    Value="#4c5870"
                                     TargetName="inputBorderBackgroundEl" />
                             <Setter Property="Opacity"
                                     Value="0.4"

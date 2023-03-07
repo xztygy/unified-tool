@@ -23,7 +23,6 @@ namespace UnifiedTool
     public partial class MainWindow : Window
     {
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -32,31 +31,32 @@ namespace UnifiedTool
         private void toolTitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Point _pressedPosition = e.GetPosition(this);
-
+            double toolBar_width = toolTitleBar.ActualWidth; 
+            double toolBar_height = toolTitleBar.ActualHeight;
             if (e.LeftButton == MouseButtonState.Pressed)
-            {
+            {  
                 if (this.WindowState == WindowState.Maximized) {
 
-                    double mouse_window_y = System.Windows.Forms.Control.MousePosition.Y;
-                    double mouse_window_x = System.Windows.Forms.Control.MousePosition.X;
+                        double mouse_window_y = System.Windows.Forms.Control.MousePosition.Y;
+                        double mouse_window_x = System.Windows.Forms.Control.MousePosition.X;
 
-                    double mouse_w = _pressedPosition.X / toolTitleBar.ActualWidth;
-
-                    this.WindowState = WindowState.Normal;
-                    double h_mouse_x =mouse_w * toolTitleBar.ActualWidth;
+                        double mouse_w = _pressedPosition.X / toolTitleBar.ActualWidth;
                     
-                    this.Top = mouse_window_y - _pressedPosition.Y;
-                    this.Left = mouse_window_x - h_mouse_x;
+                        this.WindowState = WindowState.Normal;
+                        double h_mouse_x = mouse_w * toolTitleBar.ActualWidth;
+
+                        this.Top = mouse_window_y - _pressedPosition.Y;
+                        this.Left = mouse_window_x - h_mouse_x;
 
                 }
                 System.Diagnostics.Debug.WriteLine("标题按下");
                 System.Diagnostics.Debug.WriteLine("X:" + _pressedPosition.X);
                 System.Diagnostics.Debug.WriteLine("Y:" + _pressedPosition.Y);
-                System.Diagnostics.Debug.WriteLine("宽:" + toolTitleBar.ActualWidth);
-                System.Diagnostics.Debug.WriteLine("高:" + toolTitleBar.ActualHeight);
+                System.Diagnostics.Debug.WriteLine("宽:" + toolBar_width);
+                System.Diagnostics.Debug.WriteLine("高:" + toolBar_height);
 
-                if (_pressedPosition.X >= 0 && _pressedPosition.X < toolTitleBar.ActualWidth
-                    && _pressedPosition.Y >= 0 && _pressedPosition.Y < toolTitleBar.ActualHeight
+                if (_pressedPosition.X >= 0 && _pressedPosition.X < toolBar_width
+                    && _pressedPosition.Y >= 0 && _pressedPosition.Y < toolBar_height
                     )
                 {
                     this.DragMove();
@@ -109,6 +109,11 @@ namespace UnifiedTool
         {
            LoginFrom login = new LoginFrom();
            login.Show();
+        }
+
+        private void toolTitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
