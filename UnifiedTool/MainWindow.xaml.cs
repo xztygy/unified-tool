@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -114,6 +115,25 @@ namespace UnifiedTool
         private void toolTitleBar_MouseMove(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void sidebar_Open_Click(object sender, RoutedEventArgs e)
+        {
+            this.sidebar_Close.IsEnabled = true;
+            this.sidebar_Close.Visibility= Visibility.Visible;
+
+            this.sidebar_Open.IsEnabled = false;
+            this.sidebar_Open.Visibility = Visibility.Hidden;
+
+        }
+
+        private void sidebar_Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.sidebar_Open.IsEnabled = true;
+            this.sidebar_Open.Visibility = Visibility.Visible;
+
+            this.sidebar_Close.IsEnabled = false;
+            this.sidebar_Close.Visibility = Visibility.Hidden;
         }
     }
 }

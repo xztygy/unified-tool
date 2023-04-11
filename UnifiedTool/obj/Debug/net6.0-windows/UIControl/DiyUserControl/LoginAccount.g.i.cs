@@ -57,7 +57,7 @@ namespace UnifiedTool.UIControl.DiyUserControl {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/UnifiedTool;V1.0.0.0;component/uicontrol/diyusercontrol/loginaccount.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/UnifiedTool;component/uicontrol/diyusercontrol/loginaccount.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\UIControl\DiyUserControl\LoginAccount.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
