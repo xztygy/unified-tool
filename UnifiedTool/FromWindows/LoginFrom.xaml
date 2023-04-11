@@ -4,104 +4,148 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:UnifiedTool.UIControl.DiyUserControl"
         mc:Ignorable="d"
-        Height="391"
-        Width="600"
+        Height="500"
+        Width="800"
         Margin="0"
         Padding="0"
         BorderBrush="{x:Null}"
         WindowStyle="None"
         ResizeMode="NoResize"
+        
         Topmost="True"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Background="#FFFFFF"
         Title="LoginFrom" >
+    <Window.Background>
+        <ImageBrush ImageSource="https://dfzximg01.dftoutiao.com/minimodify/20230410/660x372_643398a02c791.jpeg" TileMode="None" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid x:Name="login_body"
           MouseLeftButtonDown="login_body_MouseLeftButtonDown">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Background="#E0DCDC">
-            <Image/>
+        <Grid Grid.Column="0">
+            <materialDesign:ColorZone 
+                                    Background="Transparent"
+                                    VerticalAlignment="Stretch"
+                                    Mode="Inverted">
+                <DockPanel>
+                    <StackPanel materialDesign:RippleAssist.IsCentered="True"
+                                    Orientation="Vertical">
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
         </Grid>
-        <Grid  Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        Height="50"
-                        VerticalAlignment="Top"
-                        BorderThickness="1" />
-                <Label Grid.Row="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Bottom"
-                       Padding="0 20"
-                       FontSize="26"
-                       FontWeight="UltraBlack"
-                       Content="用户登录" />
-            </Grid>
-            <Grid Grid.Row="1"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center">
-                <Grid Width="200"
-                      
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row="0"
-                          Background="#F2F2F2"
-                          Margin="0 5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40" />
-                            <ColumnDefinition Width="160" />
-                        </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon Kind="AccountCircleOutline"
+        <Grid Grid.Column="1"
+               >
+            <materialDesign:ColorZone 
+                                      CornerRadius="5 0 0 5"
+                                      VerticalAlignment="Stretch"
+                                      Background="#FFFFFF"
+                                      Foreground="#000000"
+                                      Mode="Inverted">
+                <DockPanel>
+                    <StackPanel materialDesign:RippleAssist.IsCentered="True"
+                                    Orientation="Vertical">
+                        <Grid 
+                            Height="250"
+                            >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid >
+                                <Button x:Name="return_login"
+                                            Style="{DynamicResource RightLightMenuFormStyle}"
+                                            VerticalAlignment="Top"
+                                            HorizontalAlignment="Right"
+                                            Background="Transparent"
+                                            BorderBrush="Transparent"
+                                            Click="return_login_Click"
+                                            >
+                                    <materialDesign:PackIcon Kind="Close" />
+                                </Button>
+
+                            </Grid>
+                            <Label Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Padding="0 20"
+                                   FontSize="26"
+                                   FontWeight="UltraBlack"
+                                   Content="用户登录" />
+                            <Grid Grid.Row="2">
+                                <materialDesign:ColorZone 
+                                      VerticalAlignment="Stretch"
+                                      Background="Transparent"
+                                      Mode="Inverted">
+                                    <DockPanel>
+                                        <StackPanel materialDesign:RippleAssist.IsCentered="True"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"
+                                                    Orientation="Horizontal">
+                                            <Line X1="0" Y1="10" X2="110" Y2="10" Stroke="Black" StrokeThickness="2" Cursor="None" />
+                                            <Label Content="OR" FontWeight="Bold"/>
+                                            <Line X1="0" Y1="10" X2="110" Y2="10" Stroke="Black" StrokeThickness="2" Cursor="None" />
+                                        </StackPanel>
+                                    </DockPanel>
+                                </materialDesign:ColorZone>
+                            </Grid>
+                        </Grid>
+                        <Grid 
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                            <Grid Width="200"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0"
+                                      Background="#F2F2F2"
+                                      Margin="0 5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="160" />
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="AccountCircleOutline"
                                                  HorizontalAlignment="Center"
                                                  Background="Transparent"
                                                  BorderBrush="Transparent"
                                                  Width="20"
                                                  Height="20"
                                                  VerticalAlignment="Center" />
-                        <TextBox Grid.Column="1"
-                                 Background="Transparent"
-                                 Padding="0 10"
-                                 BorderThickness="0" />
-                    </Grid>
-                    <Grid Grid.Row="1"
-                          Background="#F2F2F2"
-                          Margin="0 5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40" />
-                            <ColumnDefinition Width="137"/>
-                            <ColumnDefinition Width="20" />
-                        </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon Kind="LockOutline"
+                                    <TextBox Grid.Column="1"
+                                             Background="Transparent"
+                                             Padding="0 10"
+                                             BorderThickness="0" />
+                                </Grid>
+                                <Grid Grid.Row="1"
+                                      Background="#F2F2F2"
+                                      Margin="0 5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="137"/>
+                                        <ColumnDefinition Width="20" />
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="LockOutline"
                                                  HorizontalAlignment="Center"
                                                  Background="Transparent"
                                                  BorderBrush="Transparent"
                                                  Width="20"
                                                  Height="20"
                                                  VerticalAlignment="Center" />
-                        <PasswordBox Grid.Column="1"
+                                    <PasswordBox Grid.Column="1"
                                      Background="Transparent"
                                      Padding="0 10"
                                      PasswordChar="*"
                                      BorderThickness="0" />
-                        <materialDesign:PackIcon Kind="EyeOutline"
+                                    <materialDesign:PackIcon Kind="EyeOutline"
                                                  Grid.Column="2"
                                                  HorizontalAlignment="Center"
                                                  Background="Transparent"
@@ -109,68 +153,52 @@
                                                  Width="20"
                                                  Height="20"
                                                  VerticalAlignment="Center" />
-                    </Grid>
-                    <Border Grid.Row="0"
-                            Margin="0 7"
-                            BorderThickness="1"
-                            CornerRadius="5"
-                            BorderBrush="#F2F2F2" />
-                    <Border Grid.Row="1"
-                            Margin="0 7"
-                            BorderThickness="1"
-                            CornerRadius="5"
-                            BorderBrush="#F2F2F2" />
-                </Grid>
-            </Grid>
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1">
-                    <CheckBox x:Name="FilledComboBoxEnabledCheckBox"
-                              Margin="0"
-                              Content="记住密码"
-                              HorizontalAlignment="Left"
-                              VerticalAlignment="Center"
-                              IsChecked="False" />
-                </Grid>
-                <Grid Grid.Column="2">
-                    <Label 
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Center"
-                           Margin="0"
-                           Padding="0"
-                           Content="忘记密码?" />
-                </Grid>
-                
-                
-            </Grid>
-            <Grid Grid.Row="3">
-                <Button Style="{DynamicResource btnLogin}"
-                        HorizontalAlignment="Center"
-                        Content="登录"></Button>
-            </Grid>
-            <Grid Grid.Row="4">
+                                </Grid>
+                                <Border Grid.Row="0"
+                                        Margin="0 7"
+                                        BorderThickness="1"
+                                        CornerRadius="5"
+                                        BorderBrush="#F2F2F2" />
+                                <Border Grid.Row="1"
+                                        Margin="0 7"
+                                        BorderThickness="1"
+                                        CornerRadius="5"
+                                        BorderBrush="#F2F2F2" />
+                            </Grid>
+                        </Grid>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <CheckBox x:Name="FilledComboBoxEnabledCheckBox"
+                                          Margin="0"
+                                          Content="记住密码"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          IsChecked="False" />
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Label 
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Margin="0"
+                                       Padding="0"
+                                       Content="忘记密码?" />
+                            </Grid>
+                        </Grid>
+                        <Grid >
+                            <Button Style="{DynamicResource btnLogin}"
+                                    HorizontalAlignment="Center"
+                                    Content="登录"></Button>
+                        </Grid>
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
 
-                <ToggleButton materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Lock}"
-                              Content="{materialDesign:PackIcon Kind=KeyboardReturn}"
-                              Style="{StaticResource MaterialDesignActionToggleButton}"
-                              HorizontalAlignment="Left"
-                              Foreground="Black"
-                              Background="Transparent"
-                              BorderBrush="Transparent"
-                              VerticalAlignment="Center"
-                              x:Name="return_login"
-                              Click="return_login_Click" />
-            </Grid>
         </Grid>
-        <Border Grid.Column="1"
-                Margin="0"
-                BorderThickness="5 0 0 0"
-                CornerRadius="10"
-                BorderBrush="#E0DCDC" />
     </Grid>
 </Window>
