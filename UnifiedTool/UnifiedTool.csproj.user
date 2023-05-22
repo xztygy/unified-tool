@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Admin\Desktop\unified-tool\UnifiedTool\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -14,6 +16,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UIControl\DiyUserControl\LoginAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UIControl\UIPage\UndevelopedPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -31,6 +36,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UIControl\StyleDictionary\MenuDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UIControl\UIPage\UndevelopedPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

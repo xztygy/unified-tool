@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UnifiedTool</id>
+    <version>1.0.0</version>
+    <authors>UnifiedTool</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="MaterialDesignThemes" version="4.7.1" exclude="Build,Analyzers" />
+        <dependency id="ShowMeTheXAML" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="ShowMeTheXAML.AvalonEdit" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="ShowMeTheXAML.MSBuild" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Admin\Desktop\unified-tool\UnifiedTool\bin\Debug\net6.0-windows\UnifiedTool.runtimeconfig.json" target="lib\net6.0-windows7.0\UnifiedTool.runtimeconfig.json" />
+    <file src="C:\Users\Admin\Desktop\unified-tool\UnifiedTool\bin\Debug\net6.0-windows\UnifiedTool.dll" target="lib\net6.0-windows7.0\UnifiedTool.dll" />
+  </files>
+</package>

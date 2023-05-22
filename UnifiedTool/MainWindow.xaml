@@ -28,7 +28,7 @@
                       ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
     <Grid>
-        <Border Background="{DynamicResource MaterialDesignPaper}">
+        <Border Background="#26000000">
             <Border.Effect>
                 <DropShadowEffect Direction="0"
                                   ShadowDepth="0"
@@ -42,6 +42,7 @@
                 <RowDefinition Height="61" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <!--#region 头部 Head-->
             <Grid VerticalAlignment="Top"
                   x:Name="toolTitleBar"
                   MouseMove="toolTitleBar_MouseMove"
@@ -100,6 +101,7 @@
                         </StackPanel>
                     </DockPanel>
                 </materialDesign:ColorZone>
+                <!--#region 标题 -->
                 <Grid HorizontalAlignment="Right">
                     <materialDesign:ColorZone  Mode="Inverted">
                         <DockPanel>
@@ -146,7 +148,9 @@
                         </DockPanel>
                     </materialDesign:ColorZone>
                 </Grid>
+                <!--#endregion-->
             </Grid>
+            <!--#endregion-->
             <Grid Grid.Row="1"
                   Margin="0"
                   HorizontalAlignment="Stretch"
@@ -154,7 +158,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid>
+                <Grid Panel.ZIndex="100">
                     <materialDesign:DrawerHost x:Name="drawer_host"
                                                OpenMode="Standard"
                                                IsLeftDrawerOpen="True"
@@ -167,9 +171,8 @@
                         <materialDesign:DrawerHost.LeftDrawerContent>
                             <Grid>
                                 <Border BorderThickness="0 0 1 0"
-                                        BorderBrush="#C6C7C5"
-                                        Background="#FFFFFF"
-                                        />
+                                        BorderBrush="#FFFAFAFA"
+                                        Background="#FFFFFF" />
                                 <StackPanel Margin="10"
                                             Width="132">
                                     <TextBlock Margin="0,0,0,20"
@@ -177,110 +180,68 @@
                                                FontSize="14"
                                                FontWeight="ExtraBold"
                                                TextWrapping="Wrap"
-                                               Text="公告：暂无" />
-                                    <Button Margin="0 1"
-                                            Style="{StaticResource btnMenu}"
-                                           >
-                                        <StackPanel Orientation="Horizontal"
-                                                    >
-                                            <materialDesign:PackIcon Kind="MusicBoxOutline"
-                                                                    VerticalAlignment="Center"
-                                                                     />
-                                            <Label Content="音乐商店"
-                                                   FontSize="14"/>
-                                        </StackPanel>
-                                    </Button>
-                                    <Button Margin="0 1"
-                                            Style="{StaticResource btnMenu}">
-                                        <StackPanel Orientation="Horizontal"
-                                                    >
-                                            <materialDesign:PackIcon Kind="MusicBox"
-                                                                     VerticalAlignment="Center"
-                                                                     />
-                                            <Label Content="TikTok"
-                                                   FontSize="14" />
-                                        </StackPanel>
-                                    </Button>
-                                    <Button Margin="0 1"
-                                            Style="{StaticResource btnMenu}">
-                                        <StackPanel Orientation="Horizontal"
-                                                    >
-                                            <materialDesign:PackIcon Kind="Youtube"
+                                               Text="DingDong" />
+                                    <Button Style="{StaticResource btnMenu}" 
+                                            x:Name="btnColMusic"
+                                            Click="btnColMusic_Click"
+                                            >
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Music"
+                                                                     Width="25"
+                                                                     Height="20"
                                                                      VerticalAlignment="Center" />
-                                            <Label Content="YouTube"
-                                                   FontSize="14" />
+                                            <Label Content="Music"
+                                                   />
                                         </StackPanel>
                                     </Button>
-                                    <Button Margin="0 1"
-                                            Style="{StaticResource btnMenu}">
-                                        <StackPanel Orientation="Horizontal"
-                                                    >
-                                            <materialDesign:PackIcon Kind="VideoHighDefinition"
+                                    <Button Style="{StaticResource btnMenu}"
+                                            x:Name="btnColVideo"
+                                            Click="btnColVideo_Click"
+                                            >
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Video4kBox"
+                                                                     Width="25"
+                                                                     Height="20"
                                                                      VerticalAlignment="Center" />
-                                            <Label Content="高清视频"
-                                                   FontSize="14" />
+                                            <Label Content="播放器"
+                                                   />
                                         </StackPanel>
                                     </Button>
+
                                 </StackPanel>
                             </Grid>
                         </materialDesign:DrawerHost.LeftDrawerContent>
                         <Grid>
-                            <ToggleButton x:Name="sidebar_Open"
+                            <Button x:Name="sidebar_Open"
                                           IsEnabled="False"
-                                          IsChecked="True"
                                           Visibility="Hidden"
-                                          HorizontalAlignment="Left"
                                           Click="sidebar_Open_Click"
-                                          Width="20"
-                                          Height="15"
-                                          Background="Transparent"
-                                          Foreground="#FF7F7F7F"
-                                          TextBlock.TextAlignment="Right"
-                                          Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                    Style="{StaticResource btnDraw}"
+                                          ToolTip="MaterialDesignSwitchToggleButton"
                                           Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
                                           CommandParameter="{x:Static Dock.Left}"
-                                          Content="{materialDesign:PackIcon Kind=Bird,Size=20}"
-                                          materialDesign:ElevationAssist.Elevation="Dp8"
-                                           />
-                            <ToggleButton x:Name="sidebar_Close"
+                                          Content="{materialDesign:PackIcon Kind=ChevronRight,Size=20}"
+                                          materialDesign:ElevationAssist.Elevation="Dp8"/>
+                            <Button x:Name="sidebar_Close"
                                           IsEnabled="True"
-                                          IsChecked="False"
-                                          Visibility="Visible"
                                           Click="sidebar_Close_Click"
-                                          HorizontalAlignment="Left"
-                                          Width="20"
-                                          Height="15"
-                                          Background="Transparent"
-                                          Foreground="Black"
-                                          TextBlock.TextAlignment="Right"
-                                          Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                          Style="{StaticResource btnDraw}"
                                           Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}"
                                           CommandParameter="{x:Static Dock.Left}"
-                                          Content="{materialDesign:PackIcon Kind=Bird,Size=20}"
-                                          materialDesign:ElevationAssist.Elevation="Dp8" />
+                                          Content="{materialDesign:PackIcon Kind=ChevronLeft,Size=20}"
+                                          materialDesign:ElevationAssist.Elevation="Dp8"
+                                     />
                         </Grid>
                     </materialDesign:DrawerHost>
                 </Grid>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="30" />
+                        <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0">
-
-                    </Grid>
+                    <Frame Grid.Row="0"
+                           x:Name="main_body"></Frame>
                     <Grid Grid.Row="1"
-                          VerticalAlignment="Stretch">
-                        <TextBlock VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="40"
-                                   FontWeight="Bold"
-                                   Text="WeCome TO TTI.Video"
-                                   FontStyle="Italic"
-                                   FontFamily="FangSong" />
-                    </Grid>
-                    <Grid Grid.Row="2"
                           VerticalAlignment="Bottom"></Grid>
                 </Grid>
             </Grid>

@@ -203,6 +203,8 @@
                 Value="40" />
         <Setter Property="Width"
                 Value="132" />
+        <Setter Property="Margin"
+                Value="0 1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -231,6 +233,44 @@
                                  Value="false">
                             <Setter Property="Opacity"
                                     Value="0.38" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="btnDraw"
+           TargetType="{x:Type Button}">
+        <Setter Property="Foreground"
+                Value="Black" />
+        <Setter Property="Background"
+                Value="#FFEDEFF2" />
+        <Setter Property="Height"
+                Value="30" />
+        <Setter Property="Width"
+                Value="20" />
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="inputBorderBackgroundEl"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{DynamicResource ForgroundBrush}"
+                            BorderThickness="0"
+                            CornerRadius="0 5 5 0"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Left" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="true">
+                            <Setter Value="{Binding Foreground , RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource BrushOpacityConverter}, ConverterParameter=0.16}"
+                                    Property="Background"
+                                    TargetName="inputBorderBackgroundEl" />
+                            <Setter Value="22"
+                                    Property="Width" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

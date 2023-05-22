@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UnifiedTool.FromWindows;
 using UnifiedTool.UIControl.DiyUserControl;
+using UnifiedTool.UIControl.UIPage;
 
 namespace UnifiedTool
 {
@@ -23,10 +24,16 @@ namespace UnifiedTool
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DefaultPage defaultPage = new DefaultPage();
+        private MusicStorePage? musicStorePage = null;
+        private UndevelopedPage undevelopedPage = new UndevelopedPage();
 
         public MainWindow()
         {
             InitializeComponent();
+            //当主窗体所有的资源包括渲染完成之后执行
+            main_body.Navigate(defaultPage);
+            main_body.NavigationUIVisibility = NavigationUIVisibility.Hidden;    
         }
 
         private void toolTitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -134,6 +141,19 @@ namespace UnifiedTool
 
             this.sidebar_Close.IsEnabled = false;
             this.sidebar_Close.Visibility = Visibility.Hidden;
+        }
+
+        private void btnColMusic_Click(object sender, RoutedEventArgs e)
+        {
+            if (musicStorePage == null) {
+                musicStorePage = new MusicStorePage();
+            }
+            this.main_body.Navigate(musicStorePage);
+        }
+
+        private void btnColVideo_Click(object sender, RoutedEventArgs e)
+        {
+            this.main_body.Navigate(undevelopedPage);
         }
     }
 }
