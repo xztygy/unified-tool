@@ -1,37 +1,19 @@
 # UnifiedTool
 
 #### 介绍
-手撸小工具
+音乐、视频播放器
 
 #### 软件架构
 软件架构说明
+WPF、MaterialDesign
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.  下载VStudio任意版本
+2.  .net6.0以上
+3.  C#.cs
 
 
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+![主窗体](168480490700521128726287_105254531708_65195C60-EB9C-40ae-89BF-9EEEB8575220.png)
+![登录](168480493939821128726287_105254466417_EFD828DA-79AB-47f8-A551-21BA8FF9D92A.png)
